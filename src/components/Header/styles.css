@@ -1,0 +1,41 @@
+header{
+    width: inherit;
+    margin: 10px 30px 10px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.add-new{
+    display: flex;
+    align-items: center;
+}
+
+input{
+    background-color: inherit;
+    border: none;
+    border-bottom: solid 2px #000;
+    outline: none;
+    padding-bottom: 4px;
+    padding-left: 4px;
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 0.7px;
+}
+
+.reset-button{
+    background-color: inherit;
+    border: none;
+    cursor: pointer;      
+    outline: none;
+    margin-left: 10px;
+}
+.edit-button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.edit-div{
+    display: flex;
+}

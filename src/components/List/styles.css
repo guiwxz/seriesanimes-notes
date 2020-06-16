@@ -1,0 +1,34 @@
+.header-section{
+    height: 100px;
+    background: linear-gradient(to bottom, #bbb, #f0f0f0);
+}
+
+.list-section{
+    width: 100%;
+    height: 100%;
+    overflow: scroll;
+
+    background: #f0f0f0;
+    color: #333;
+}
+
+.div-list{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    list-style: none;
+    margin: 12px 0px;
+    margin-right: 20px;
+}
+
+.div-list:last-of-type{
+    margin-bottom: 0;
+}
+
+.delete-button{
+    border: none;
+    cursor: pointer;      
+    outline: none;
+}
+/*box-shadow: 0 0 100px rgba(00, 00, 00, 0.5);*/
