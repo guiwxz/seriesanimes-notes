@@ -12,7 +12,7 @@
 <hr/>
 <p> Desenvolvi esse aplicativo pensando na utilização do React-Redux e também para ter um local mais especial pra salvar minhas séries
 assistidas, deixando de lado meu bloco de notas sem graça. Com ele também aprendi a fazer deploy de uma aplicação utilizando Heroku e Github.</p>
-<p>Não possui muitas funcionalidades mas ficou bonitinho, espero que goste :) <br />Esse é o link para conferir: https://seriesanimes-notes.herokuapp.com/</p>
+<p>Não possui muitas funcionalidades mas ficou melhor legalzinho, espero que goste :) <br />Esse é o link para conferir: https://seriesanimes-notes.herokuapp.com/</p>
 <hr/>
 
 
