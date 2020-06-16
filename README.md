@@ -1,4 +1,4 @@
-# GamerFinder_v1
+# Series&Animes-Notes
 <div>
   <p>Feito por: <b >Guilherme Manfroi</b></p>
   <a href="https://www.linkedin.com/in/guilherme-manfroi/" target="_blank" >
@@ -16,7 +16,9 @@ assistidas, deixando de lado meu bloco de notas sem graça. Com ele também apre
 <hr/>
 
 
-
+<div align="center">
+   <img src="https://github.com/guiwxz/seriesanimes-notes/blob/master/seriesanimes-notesIMG.png" alt="GamerFinder" align="center"/>
+</div>
 
 
 ## :computer: Languages
