@@ -50,7 +50,7 @@ export default function List() {
               <ul>
                 {state.watchingActive && state.watching.map((anime, i) => (
                   <div key={i} className="div-list">
-                    <li><FiChevronRight size={15}/>{anime}</li>
+                    <li><FiChevronRight size={15} style={{marginRight: '5px'}}/>{anime}</li>
                     <div className="watching-ep-div">
                       <i>Ep: </i><input type="number" value={state.watchingEp[i]} className="ep-input" min="0" onChange={(e) => changeAnimeEp(e, i)} />
                       <button className="delete-button" onClick={() => {removeAnime(i, 'watching')}}><FiDelete size={20}/></button>
@@ -62,7 +62,7 @@ export default function List() {
               <ul>
                 {state.toWatchActive && state.toWatch.map((anime, i) => (
                   <div key={i} className="div-list">
-                    <li><FiPlay size={10}/>{anime}</li>                   
+                    <li><FiPlay size={10} style={{marginRight: '7px'}}/>{anime}</li>                   
                     <button className="delete-button" onClick={() => {removeAnime(i, 'toWatch')}}><FiDelete size={20}/></button>
                   </div>
                 ))}
@@ -71,7 +71,7 @@ export default function List() {
               <ul>
                 {state.endedActive && state.ended.map((anime, i) => (
                   <div key={i} className="div-list">
-                    <li style={{listStyle: 'decimal', marginLeft: '15px'}}>{anime}</li>
+                    <li style={{listStyle: 'decimal', marginLeft: '20px'}}>{anime}</li>
                     <div className="ended-times-div">
                       <div>
                         <i style={{fontSize: '14px'}}>x</i><input type="number" value={state.timesEnded[i]} className="times-input" min="1" onChange={(e) => changeTimesEnded(e, i)} />
@@ -85,7 +85,7 @@ export default function List() {
               <ul>
                 {state.editActive && state.edit.map((anime, i) => (
                   <div key={i} className="div-list">
-                    <li><FiHash size={15} />{anime}</li>
+                    <li><FiHash size={15} style={{marginRight: '7px'}}/>{anime}</li>
                     <button className="delete-button" onClick={() => {removeAnime(i, 'edit')}}><FiDelete size={20}/></button>
                   </div>
                 ))}
