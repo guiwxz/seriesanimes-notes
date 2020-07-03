@@ -7,7 +7,7 @@
     width: 100%;
     height: 100%;
     overflow: scroll;
-
+ 
     background: #f0f0f0;
     color: #333;
 }
@@ -22,6 +22,15 @@
     margin-right: 20px;
 }
 
+.div-list .watching-ep-div{
+    display: flex;
+    font-size: 15px;
+}
+
+.div-list div .ep-input{
+    margin-left: 5px;
+}
+
 .div-list:last-of-type{
     margin-bottom: 0;
 }
@@ -31,4 +40,60 @@
     cursor: pointer;      
     outline: none;
 }
+
+.ep-input{
+    width: 40px;
+    border: none;
+    text-align: start;
+    font-weight: bold;
+}
+
+.times-input{
+    width: 30px;
+    border: none;
+    text-align: start;
+
+}
+
+.ended-times-div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media only screen and (max-width: 700px){
+    .header-section{
+        height: 230px;
+        background: linear-gradient(to bottom, #bbb, #f0f0f0);
+    }
+    .list-section{
+        border-top: solid 2px #bbb;
+        
+    }
+    .div-list{
+        margin-left: 0;
+        margin-right: 10px;
+        
+    }
+    ul{
+        padding-inline-start: 15px;
+    }
+    .delete-button{
+        background-color: inherit;
+    }
+    
+}
+
 /*box-shadow: 0 0 100px rgba(00, 00, 00, 0.5);*/

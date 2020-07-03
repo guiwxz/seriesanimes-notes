@@ -13,7 +13,17 @@ export default function Header(props){
 
 
     function addAnime(title) {
-      localStorage.setItem(props.tipo, localStorage.getItem(props.tipo) !== null ? localStorage.getItem(props.tipo)+","+title : title);
+      console.log(localStorage.getItem('watching'))
+      if(localStorage.getItem(props.tipo) === null ||  localStorage.getItem(props.tipo) === ''){
+        localStorage.setItem(props.tipo, title);
+        props.tipo === 'watching' && localStorage.setItem('watchingEp', '1')
+        props.tipo === 'ended' && localStorage.setItem('timesEnded', '1')
+      }else{
+        localStorage.setItem(props.tipo,  localStorage.getItem(props.tipo)+","+title);
+        props.tipo === 'watching' && localStorage.setItem('watchingEp', localStorage.getItem('watchingEp')+',1')       
+        props.tipo === 'ended' && localStorage.setItem('timesEnded', localStorage.getItem('timesEnded')+',1')       
+      }
+
       dispatch({ 
         type: 'ADD_ANIME',
         title,  
