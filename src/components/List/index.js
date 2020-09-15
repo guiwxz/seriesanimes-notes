@@ -1,15 +1,27 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { FiDelete, FiChevronRight, FiHash, FiPlay } from 'react-icons/fi'
+import { FiDelete, FiChevronRight, FiHash, FiPlay, FiCheck, FiX } from 'react-icons/fi'
+import { Tooltip } from '@material-ui/core';
 
 import Header from '../Header'
 
 import './styles.css'
 
+import addAnimeOnStorage from '../../utils/addAnimeOnStorage'
+
 export default function List() {
     const state = useSelector(state => state) // o return dessa func é oq a gente quer usar la do store
                                               // nesse caso é tudo    
     const dispatch = useDispatch();
+
+    function addAnime(title, tipo) {
+      addAnimeOnStorage(title, tipo);
+      dispatch({ 
+        type: 'ADD_ANIME',
+        title,  
+        tipo,
+      })
+    }
 
     function removeAnime(i, tipo){    
       dispatch({
@@ -35,6 +47,18 @@ export default function List() {
         value: e.target.value
       })
     }
+
+    function setWatching(i, title){
+      addAnime(title, "watching");
+      removeAnime(i, "toWatch")
+    }
+
+    function setEnded(i, title, eps){
+      const titleWithCounter = `${title} (${eps})`;
+
+      addAnime(titleWithCounter, "ended");
+      removeAnime(i, "watching")
+    }
     
 
     return (
@@ -53,7 +77,12 @@ export default function List() {
                     <li><FiChevronRight size={15} style={{marginRight: '5px'}}/>{anime}</li>
                     <div className="watching-ep-div">
                       <i>Ep: </i><input type="number" value={state.watchingEp[i]} className="ep-input" min="0" onChange={(e) => changeAnimeEp(e, i)} />
-                      <button className="delete-button" onClick={() => {removeAnime(i, 'watching')}}><FiDelete size={20}/></button>
+                      <Tooltip title="Set Ended">
+                        <button className="setEnded-button" onClick={() => {setEnded(i, anime, state.watchingEp[i])}}><FiCheck size={20}/></button>
+                      </Tooltip>
+                      <Tooltip title="Delete">
+                        <button className="delete-button" onClick={() => {removeAnime(i, 'watching')}}><FiX size={20} /></button>
+                      </Tooltip>
                     </div>
                   </div>
                 ))}
@@ -62,7 +91,14 @@ export default function List() {
               <ul>
                 {state.toWatchActive && state.toWatch.map((anime, i) => (
                   <div key={i} className="div-list">
-                    <li><FiPlay size={10} style={{marginRight: '7px'}}/>{anime}</li>                   
+                    <li style={{display: 'flex', alignItems: 'center'}}>
+                      <Tooltip title="Set Watching">
+                        <button onClick={(e) => setWatching(i, anime)} className="setWatching-button">
+                          <FiPlay size={15} className="setWatching-icon"/>
+                        </button>
+                      </Tooltip>
+                      {anime}
+                    </li>                   
                     <button className="delete-button" onClick={() => {removeAnime(i, 'toWatch')}}><FiDelete size={20}/></button>
                   </div>
                 ))}

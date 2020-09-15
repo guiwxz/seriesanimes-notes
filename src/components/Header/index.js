@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux'
 import { FiPlusSquare, FiEdit, FiCheckSquare } from 'react-icons/fi'
 import './styles.css';
 
+import addAnimeOnStorage from '../../utils/addAnimeOnStorage'
 
 export default function Header(props){
     const [title, setTitle] = useState('');
@@ -13,17 +14,7 @@ export default function Header(props){
 
 
     function addAnime(title) {
-      console.log(localStorage.getItem('watching'))
-      if(localStorage.getItem(props.tipo) === null ||  localStorage.getItem(props.tipo) === ''){
-        localStorage.setItem(props.tipo, title);
-        props.tipo === 'watching' && localStorage.setItem('watchingEp', '1')
-        props.tipo === 'ended' && localStorage.setItem('timesEnded', '1')
-      }else{
-        localStorage.setItem(props.tipo,  localStorage.getItem(props.tipo)+","+title);
-        props.tipo === 'watching' && localStorage.setItem('watchingEp', localStorage.getItem('watchingEp')+',1')       
-        props.tipo === 'ended' && localStorage.setItem('timesEnded', localStorage.getItem('timesEnded')+',1')       
-      }
-
+      addAnimeOnStorage(title, props.tipo)
       dispatch({ 
         type: 'ADD_ANIME',
         title,  

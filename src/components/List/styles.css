@@ -35,10 +35,23 @@
     margin-bottom: 0;
 }
 
-.delete-button{
+.delete-button, .setWatching-button, .setEnded-button{
     border: none;
     cursor: pointer;      
     outline: none;
+}
+
+.setWatching-icon{
+    margin-right: 7px; 
+    padding: 3px;
+    border: 2px solid #f0f0f5;
+    border-radius: 45%;
+    transition: border 0.5s
+}
+
+.setWatching-button:hover .setWatching-icon{
+    border: 2px solid #555;
+    
 }
 
 .ep-input{

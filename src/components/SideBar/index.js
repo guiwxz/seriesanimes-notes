@@ -6,7 +6,7 @@ import './styles.css';
 export default function SideBar() {
     const dispatch = useDispatch();
 
-    const [activeClass, setActiveClass] = useState('');
+    const [activeClass, setActiveClass] = useState('watching');
     const editTitle = localStorage.getItem('editTitle');
 
     function setActive(tipo){
